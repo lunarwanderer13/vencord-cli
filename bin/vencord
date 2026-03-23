@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+DRY_RUN=false
+ASSUME_YES=false
+
+show_help() {
+    cat << EOF
+vencord - install Vencord
+
+USAGE:
+    vencord [OPTIONS]
+
+OPTIONS:
+    -h, --help        Show this help message
+    -d, --dry-run     Show what would run without executing
+    -y, --yes         Skip confirmation prompt
+EOF
+}
+
+run_install() {
+    CMD='sh -c "$(curl -sS https://vencord.dev/install.sh)"'
+
+    if [ "$DRY_RUN" = true ]; then
+        echo "[DRY RUN]"
+        echo "$CMD"
+        return
+    fi
+
+    sh -c "$(curl -sS https://vencord.dev/install.sh)"
+}
+
+while [[ "$#" -gt 0 ]]; do
+    case "$1" in
+        -h|--help) show_help; exit 0 ;;
+        -d|--dry-run) DRY_RUN=true ;;
+        -y|--yes) ASSUME_YES=true ;;
+        *)
+            echo "Unknown option: $1"
+            show_help
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+run_install
