@@ -1,8 +1,8 @@
 # vencord-cli
 
 ## Installation
-To install `vencord-cli`, copy the following line into the terminal:
-`sudo curl -fsSL https://raw.githubusercontent.com/lunarwanderer13/vencord-cli/main/install.sh | bash`
+To install `vencord-cli`, copy the following line into the terminal:  
+`sudo curl -fsSL https://raw.githubusercontent.com/lunarwanderer13/vencord-cli/main/install.sh | bash`  
 This will install `vencord-cli` globally.
 
 ## Usage
