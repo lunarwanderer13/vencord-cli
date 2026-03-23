@@ -2,7 +2,7 @@
 
 set -e
 
-INSTALL_DIR="usr/local/bin"
+INSTALL_DIR="/usr/local/bin"
 SCRIPT_NAME="vencord"
 
 echo "[INFO] Installing $SCRIPT_NAME..."
